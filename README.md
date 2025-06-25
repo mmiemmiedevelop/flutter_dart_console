@@ -1,6 +1,6 @@
 
 
-# 📷 Shopping Mall Console by Dart
+# ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) Shopping Mall Console by Dart
 
 **Dart언어**를 학습하기 위한 쇼핑몰 콘솔 게임 입니다.
 
