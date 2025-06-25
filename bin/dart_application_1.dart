@@ -4,6 +4,7 @@ import 'dart:io';
 import 'shoppingMall.dart';
 
 void main() {
+  var shoppingMall = Shoppingmall();
   bool isRunningShopping = true;
 
   while (isRunningShopping) {
@@ -16,13 +17,13 @@ void main() {
 
     switch (input) {
       case '1':
-        showProduct();
+        showProduct(shoppingMall);
         break;
       case '2':
-        addToCart();
+        addToCart(shoppingMall);
         break;
       case '3':
-        showTotalPrice();
+        showTotalPrice(shoppingMall);
         break;
       case '4':
         isRunningShopping = exitShoppingFalse();
@@ -35,18 +36,18 @@ void main() {
 }
 
 //1.판매하는 상품 목록을 볼 수 있는 기능
-void showProduct() {
-  Shoppingmall().showProducts();
+void showProduct(Shoppingmall shoppingMall) {
+  shoppingMall.showProducts();
 }
 
 //2. 상품을 장바구니에 담을 수 있는 기능
-void addToCart() {
-  Shoppingmall().addToCart();
+void addToCart(Shoppingmall shoppingMall) {
+  shoppingMall.addToCart();
 }
 
 //3. 장바구니에 담은 상품들의 총 가격을 볼 수 있는 기능
-void showTotalPrice() {
-  Shoppingmall().showTotalPrice();
+void showTotalPrice(Shoppingmall shoppingMall) {
+  shoppingMall.showTotalPrice();
 }
 
 //4. 쇼핑몰 프로그램을 종료할 수 있는 기능
