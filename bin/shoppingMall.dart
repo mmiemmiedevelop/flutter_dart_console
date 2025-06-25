@@ -24,9 +24,10 @@ class Shoppingmall {
       return;
     }
     //[상품갯수] 형변환 + 예외처리
+    int countValue;
     try {
-      int value = int.parse(count);
-      if (value <= 0) {
+      countValue = int.parse(count);
+      if (countValue <= 0) {
         throw FormatException('0개보다 많은 개수의 상품만 담을 수 있어요 !');
       }
     } on FormatException catch (e) {
@@ -37,12 +38,12 @@ class Shoppingmall {
       return;
     }
 
-    // //사용자인풋 받아오기
-    // int eachProductPrice = productList
-    //     .firstWhere((product) => product.productName == '셔츠')
-    //     .productPrice;
-    // int eachAdd = eachProductPrice * count.toInt();
-    print('$name $count 오키오키');
+    //[가격계산]
+    int eachProductPrice = productList
+        .firstWhere((product) => product.productName == name)
+        .productPrice;
+    totalPrice = eachProductPrice * countValue;
+    print('장바구니에 상품이 담겼어요 !');
   }
 
   void showTotalPrice() {
