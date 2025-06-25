@@ -37,9 +37,6 @@ void main() {
 //1.판매하는 상품 목록을 볼 수 있는 기능
 void showProduct() {
   Shoppingmall().showProducts();
-  for (int i = 0; i < 5; i++) {
-    print('i: $i');
-  }
 }
 
 //2. 상품을 장바구니에 담을 수 있는 기능

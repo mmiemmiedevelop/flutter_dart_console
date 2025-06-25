@@ -1,4 +1,6 @@
 class Product {
-  String productName = '';
-  int productPrice = 0;
+  final String productName;
+  final int productPrice;
+
+  Product(this.productName, this.productPrice);
 }
