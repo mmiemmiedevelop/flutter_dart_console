@@ -16,10 +16,10 @@ class Shoppingmall {
     }
   }
 
-  void addToCart(String name, String count) {
+  void addToCart(String? name, String? count) {
     //널처리나 형변환은 안쪽 메쏘드에서 진행
     //[상품이름]예외처리
-    if (name.trim().isEmpty) {
+    if (name == null || name.trim().isEmpty || count == null) {
       print('입력값이 올바르지 않아요 !');
       return;
     }
@@ -38,10 +38,18 @@ class Shoppingmall {
       return;
     }
 
+    //없는 상품명 입력했을 때 예외처리
+    int eachProductPrice;
+    try {
+      eachProductPrice = productList
+          .firstWhere((product) => product.productName == name)
+          .productPrice;
+    } catch (e) {
+      print('입력값이 올바르지 않아요 !');
+      return;
+    }
+
     //[가격계산]
-    int eachProductPrice = productList
-        .firstWhere((product) => product.productName == name)
-        .productPrice;
     totalPrice = eachProductPrice * countValue;
     print('장바구니에 상품이 담겼어요 !');
   }

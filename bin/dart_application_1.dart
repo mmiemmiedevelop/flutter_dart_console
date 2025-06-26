@@ -47,7 +47,7 @@ void addToCart(Shoppingmall shoppingMall) {
   stdout.write('상품 개수를 입력해 주세요 !\n');
   final inputCount = stdin.readLineSync();
 
-  shoppingMall.addToCart(inputName!, inputCount!);
+  shoppingMall.addToCart(inputName, inputCount);
 }
 
 //3. 장바구니에 담은 상품들의 총 가격을 볼 수 있는 기능
