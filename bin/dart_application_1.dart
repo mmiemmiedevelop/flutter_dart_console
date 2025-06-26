@@ -53,9 +53,14 @@ void addToCart(Shoppingmall shoppingMall) {
   shoppingMall.addToCart(inputName, inputCount);
 }
 
-//3. 장바구니에 담은 상품들의 총 가격을 볼 수 있는 기능
-void showTotalPrice(Shoppingmall shoppingMall) {
-  shoppingMall.showTotalPrice();
+// //3. 장바구니에 담은 상품들의 총 가격을 볼 수 있는 기능
+// void showTotalPrice(Shoppingmall shoppingMall) {
+//   shoppingMall.showTotalPrice();
+// }
+
+//3-1. 장바구니에 담은 상품들의 목록과 가격을 볼 수 있는 기능
+void currentCart(Shoppingmall shoppingMall) {
+  shoppingMall.currentCart();
 }
 
 // //4. 쇼핑몰 프로그램을 종료할 수 있는 기능
@@ -74,9 +79,4 @@ bool exitReAsk(Shoppingmall shoppingMall) {
 //6. 장바구니를 초기화할 수 있는 기능
 void resetProduct(Shoppingmall shoppingMall) {
   shoppingMall.resetProduct();
-}
-
-//3-1. 장바구니에 담은 상품들의 목록과 가격을 볼 수 있는 기능
-void currentCart(Shoppingmall shoppingMall) {
-  shoppingMall.currentCart();
 }
