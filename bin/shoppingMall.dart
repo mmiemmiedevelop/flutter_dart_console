@@ -1,9 +1,9 @@
 import 'product.dart';
 
 class Shoppingmall {
-  List<Product> cartList = [];
+  List<IProduct> cartList = [];
   int totalPrice = 0;
-  List<Product> productList = [
+  List<IProduct> productList = [
     Product('셔츠', 45000),
     Product('원피스', 30000),
     Product('반팔티', 35000),
