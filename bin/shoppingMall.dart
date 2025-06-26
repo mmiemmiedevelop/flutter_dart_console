@@ -71,6 +71,16 @@ class Shoppingmall {
     }
   }
 
+  bool exitShopping(String? input) {
+    if (input == '5') {
+      print('이용해 주셔서 감사합니다 ~ 안녕히 가세요 !');
+      return false;
+    } else {
+      print('종료하지 않습니다.');
+      return true;
+    }
+  }
+
   void currentCart() {
     if (cartList.isNotEmpty) {
       print(

@@ -9,9 +9,9 @@ void main() {
 
   while (isRunningShopping) {
     stdout.write(
-      '''--------------------------------------------------------------------------------------------------------
-[1] 상품 목록 보기 / [2] 장바구니에 담기 / [3] 장바구니에 담긴 상품의 총 가격 보기 / [4] 프로그램 종료
---------------------------------------------------------------------------------------------------------\n''',
+      '''-----------------------------------------------------------------------------------------------------------------------------
+[1] 상품 목록 보기 / [2] 장바구니에 담기 / [3] 장바구니에 담긴 상품의 총 가격 보기 / [4] 프로그램 종료 / [6] 장바구니 초기화
+-----------------------------------------------------------------------------------------------------------------------------\n''',
     );
     final input = stdin.readLineSync(); //사용자 인풋
 
@@ -26,7 +26,7 @@ void main() {
         currentCart(shoppingMall);
         break;
       case '4':
-        isRunningShopping = exitShoppingFalse();
+        isRunningShopping = exitReAsk(shoppingMall);
         break;
       case '6':
         resetProduct(shoppingMall);
@@ -58,15 +58,17 @@ void showTotalPrice(Shoppingmall shoppingMall) {
   shoppingMall.showTotalPrice();
 }
 
-//4. 쇼핑몰 프로그램을 종료할 수 있는 기능
-bool exitShoppingFalse() {
-  print('이용해 주셔서 감사합니다 ~ 안녕히 가세요 !');
-  return false;
-}
+// //4. 쇼핑몰 프로그램을 종료할 수 있는 기능
+// bool exitShoppingFalse() {
+//   print('이용해 주셔서 감사합니다 ~ 안녕히 가세요 !');
+//   return false;
+// }
 
 //4-1. 쇼핑몰 프로그램을 종료할 시 한번 더 종료할 것인지 물어보는 기능
-void exitReAsk() {
-  print('이용해 주셔서 감사합니다 ~ 안녕히 가세요 !');
+bool exitReAsk(Shoppingmall shoppingMall) {
+  stdout.write('정말 종료하시겠습니까? 정말 종료하시려면 [5]를 입력해 주세요.\n');
+  final exitInput = stdin.readLineSync();
+  return shoppingMall.exitShopping(exitInput);
 }
 
 //6. 장바구니를 초기화할 수 있는 기능
