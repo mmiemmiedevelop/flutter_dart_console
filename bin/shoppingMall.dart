@@ -1,6 +1,7 @@
 import 'product.dart';
 
 class Shoppingmall {
+  List<Product> cartList = [];
   int totalPrice = 0;
   List<Product> productList = [
     Product('셔츠', 45000),
@@ -51,6 +52,8 @@ class Shoppingmall {
 
     //[가격계산]
     totalPrice = eachProductPrice * countValue;
+    //[장바구니 담기]
+    cartList.add(Product(name, eachProductPrice));
     print('장바구니에 상품이 담겼어요 !');
   }
 
@@ -61,9 +64,20 @@ class Shoppingmall {
   void resetProduct() {
     if (totalPrice > 0) {
       totalPrice = 0;
+      cartList.clear();
       print('장바구니를 초기화합니다.');
     } else {
       print('이미 장바구니가 비어있습니다.');
+    }
+  }
+
+  void currentCart() {
+    if (cartList.isNotEmpty) {
+      print(
+        '장바구니에 ${cartList.map((product) => product.productName).join(', ')}가 담겨있네요. 총 [${totalPrice}]원 입니다!',
+      );
+    } else {
+      print('장바구니에 담긴 상품이 없습니다.');
     }
   }
 }

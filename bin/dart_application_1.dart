@@ -23,7 +23,7 @@ void main() {
         addToCart(shoppingMall);
         break;
       case '3':
-        showTotalPrice(shoppingMall);
+        currentCart(shoppingMall);
         break;
       case '4':
         isRunningShopping = exitShoppingFalse();
@@ -75,3 +75,6 @@ void resetProduct(Shoppingmall shoppingMall) {
 }
 
 //3-1. 장바구니에 담은 상품들의 목록과 가격을 볼 수 있는 기능
+void currentCart(Shoppingmall shoppingMall) {
+  shoppingMall.currentCart();
+}
