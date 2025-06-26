@@ -57,4 +57,13 @@ class Shoppingmall {
   void showTotalPrice() {
     print('장바구니에 $totalPrice원 어치를 담으셨네요 !');
   }
+
+  void resetProduct() {
+    if (totalPrice > 0) {
+      totalPrice = 0;
+      print('장바구니를 초기화합니다.');
+    } else {
+      print('이미 장바구니가 비어있습니다.');
+    }
+  }
 }

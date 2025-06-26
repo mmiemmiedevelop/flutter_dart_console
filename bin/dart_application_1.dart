@@ -28,6 +28,9 @@ void main() {
       case '4':
         isRunningShopping = exitShoppingFalse();
         break;
+      case '6':
+        resetProduct(shoppingMall);
+        break;
       default:
         print('지원하지 않는 기능입니다 ! 다시 시도해 주세요 ..');
         break; //Dart에서는 암묵적인 fall-through(다음으로 넘어가기) 없기때문에 switch에서 break 필수
@@ -60,3 +63,15 @@ bool exitShoppingFalse() {
   print('이용해 주셔서 감사합니다 ~ 안녕히 가세요 !');
   return false;
 }
+
+//4-1. 쇼핑몰 프로그램을 종료할 시 한번 더 종료할 것인지 물어보는 기능
+void exitReAsk() {
+  print('이용해 주셔서 감사합니다 ~ 안녕히 가세요 !');
+}
+
+//6. 장바구니를 초기화할 수 있는 기능
+void resetProduct(Shoppingmall shoppingMall) {
+  shoppingMall.resetProduct();
+}
+
+//3-1. 장바구니에 담은 상품들의 목록과 가격을 볼 수 있는 기능
